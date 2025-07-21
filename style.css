@@ -209,7 +209,6 @@ h2 {
   gap: 20px;
   align-items: center;
 }
-
 .project img {
   max-width: 300px;
   border-radius: 8px;
@@ -219,28 +218,65 @@ h2 {
 .project div {
   flex: 2;
 }
-.demobtn{
-    padding: 5px;
+.demo-btn{
+    padding: 10px;
     border-radius: 5px;
-    background-color:#111;
+    background-color:#444;
     border: none;
     color: #ffffff;
 }
-.demobtn:hover{
-    background-color:#444;
+.demo-btn:hover{
+    background-color:whitesmoke;
+    color: #000;
 }
 
-.poster{
-    padding: 10px 20px 40px; 
+.poster {
+  padding: 10px 20px 40px; 
   max-width: 1000px;
   margin: auto; 
 }
-.posterhead{
-    padding: 10px 20px 40px; 
+
+.posterhead {
+  padding: 10px 20px 40px; 
   max-width: 1000px;
   margin: auto; 
   text-align: center;
 }
+
+/* Container rows (poster1 & poster2) default as flex for desktop */
+.poster1,
+.poster2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* wrap items if needed */
+  gap: 20px;
+}
+
+/* Poster box */
+.box1 img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive media query for mobile */
+@media (max-width: 768px) {
+  .poster1,
+  .poster2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster {
+    padding: 10px;
+  }
+
+  .box1 img {
+    max-width: 90%; /* reduce size for small screens */
+  }
+}
+
 
 
 form input, form textarea {
@@ -288,6 +324,60 @@ footer {
   transition: all 0.6s ease-out;
 }
 
+/* Default Desktop Layout */
+.fisdiv, .secdiv {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.contactdet {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .fisdiv,
+  .secdiv {
+    flex-direction: column;   /* Stack vertically */
+    gap: 15px;
+  }
+
+  .contactdet {
+    flex-direction: row;      /* icon + text in row */
+    align-items: center;
+  }
+
+  .maindiv {
+    margin-left: 0;
+    padding: 0 15px;
+  }
+
+  .contactdet img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contactdet p,
+  .contactdet a {
+    font-size: 16px;
+    word-break: break-word;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* After animation triggered */
 .animate {
   opacity: 1;
@@ -318,6 +408,7 @@ footer {
     flex-direction: column;
     gap: 15px;
   }
+  
   .h3{
     text-align: center;
 }
@@ -351,6 +442,9 @@ footer {
     flex-direction: row;
     gap: 15px;
   }
+  .line{
+    margin-left: 120px;
+  }
 
   h1 {
     font-size: 2em;
@@ -366,6 +460,9 @@ footer {
 
   .project {
     flex-direction: column;
+  }
+  .posters .poster1{
+    display: block;
   }
   
 }
